@@ -4,7 +4,7 @@ import ThemeToggler from "../ThemeToggler/ThemeToggler";
 
 export default function NavBar() {
   return (
-    <nav className="flex justify-center gap-6 items-center min-h-12 sticky top-0 ">
+    <nav className="flex justify-center gap-6 items-center min-h-12 flex-wrap">
       <Link href={"/"} className="hover:text-amber-300">
         Home
       </Link>
@@ -24,12 +24,21 @@ export default function NavBar() {
         Users server
       </Link>
       <Link href={"/products/client-version"} className="hover:text-amber-300">
-        Products client
+        Product client
       </Link>
       <Link href={"/products/server-version"} className="hover:text-amber-300">
-        Products server
+        Product server
+      </Link>
+      <Link href={"/categories/create"} className="hover:text-amber-300">
+        Create category
+      </Link>
+      <Link href={"/categories"} className="hover:text-amber-300">
+        Categories
       </Link>
       <ThemeToggler />
     </nav>
   );
 }
+
+
+
