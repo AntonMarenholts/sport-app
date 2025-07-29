@@ -10,3 +10,9 @@ export const sportsTable = pgTable("sports", {
 
 // npx drizzle-kit push
 // supabase postgres
+
+export const eventsTable = pgTable("events", {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  name: varchar({ length: 100 }).notNull(),
+  description: varchar({ length: 255 }).notNull(),
+});
