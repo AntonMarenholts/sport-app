@@ -5,7 +5,18 @@ import z from "zod";
 
 const EventInsertSchema = z.object({
   name: z.string().min(3, "Minimal lenght is 3"),
-  description: z.string().max(250, "Description should be less then 250"),
+  description: z
+    .string()
+    .max(250, "Description should be less then 250")
+    // .refine(
+    //   (val) => {
+    //     if (val === "Java is the best language") {
+    //       return false;
+    //     }
+    //     return true;
+    //   },
+    //   { message: "You should learn other language" }
+    // ),
 });
 
 export async function GET() {
