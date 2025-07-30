@@ -1,5 +1,7 @@
+import { Session } from './../../../../node_modules/next-auth/core/types.d';
 import { db } from "@/db";
 import { eventsTable } from "@/db/schema";
+import { getServerSession } from 'next-auth';
 import { NextRequest, NextResponse } from "next/server";
 import z from "zod";
 
@@ -20,12 +22,20 @@ const EventInsertSchema = z.object({
 });
 
 export async function GET() {
+
   const events = await db.select().from(eventsTable);
   return NextResponse.json(events);
 }
 
 export async function POST(req: NextRequest) {
+
   try {
+    const session = await getServerSession();
+    if(!session?.user){
+      return NextResponse.json({error:"Unauthorized"}, {status:401});
+    }
+
+
     const body = await req.json();
     const newEvent = EventInsertSchema.parse(body);
 
