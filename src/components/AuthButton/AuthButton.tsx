@@ -2,6 +2,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function AuthButton() {
+    // пример использования сессии на клиентском компоненте
   const { data: session } = useSession();
 
   return session ? (

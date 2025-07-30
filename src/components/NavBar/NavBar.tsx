@@ -39,6 +39,9 @@ export default function NavBar() {
       <Link href={"/categories"} className="hover:text-amber-300">
         Categories
       </Link>
+      <Link href={"/profile"} className="hover:text-amber-300">
+        Profile
+      </Link>
       <AuthButton />
       <ThemeToggler />
     </nav>
