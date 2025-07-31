@@ -2,7 +2,7 @@
 
 import { Todo } from "@/types";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import { useEffect, useState } from "react";
 
@@ -16,12 +16,12 @@ export default function UserTodos() {
     setTodos(todosRes);
   }
   useEffect(() => {
-    if (!session?.user) {
-      router.push("/");
-    }
     console.log(session);
     fetchTodos();
   }, [router, session]);
+  if (!session) {
+    return <p>You should login first</p>;
+  }
   return (
     <div>
       <ul>
