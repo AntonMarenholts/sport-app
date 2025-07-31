@@ -1,6 +1,5 @@
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { Product } from "@/types/types";
-
+import { Product } from "@/types";
 
 export default async function ProductsServerVersion() {
   const res = await fetch("https://api.escuelajs.co/api/v1/products", {

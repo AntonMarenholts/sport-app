@@ -1,5 +1,5 @@
 import { createProduct } from "@/app/actions/createProduct";
-import { Category } from "@/types/types";
+import { Category } from "@/types";
 
 export default async function page() {
   const res = await fetch("https://api.escuelajs.co/api/v1/categories");

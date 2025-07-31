@@ -1,7 +1,6 @@
-
 import React from "react";
 import Image from "next/image";
-import { Category } from "@/types/types";
+import { Category } from "@/types";
 
 export default async function Categories() {
   const res = await fetch("https://api.escuelajs.co/api/v1/categories", {

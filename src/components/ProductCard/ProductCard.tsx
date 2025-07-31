@@ -1,10 +1,9 @@
 "use client";
 
-
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import Link from "next/link";
 
 interface ProductCardProps {

@@ -1,4 +1,4 @@
-import { User } from "@/types/types";
+import { User } from "@/types";
 import Link from "next/link";
 
 // by default - server component
@@ -23,9 +23,9 @@ const UsersServerVersion = async () => {
   // курсы валют, новости и т.д.
 
   //                   4-в
-  // ручное обновление 
+  // ручное обновление
   // next: { tags: [users]}, внутри фетча
-  // чтоб вызвать обновление мы можем 
+  // чтоб вызвать обновление мы можем
   // revalidateTag("users");
 
   if (!res.ok) {
@@ -36,11 +36,11 @@ const UsersServerVersion = async () => {
   return (
     <div>
       {users.map((user: User) => (
-        <li key={user.id}>{user.name}
-        <Link href={`/users/server-version/${user.id}`}>To user</Link></li>
+        <li key={user.id}>
+          {user.name}
+          <Link href={`/users/server-version/${user.id}`}>To user</Link>
+        </li>
       ))}
-
-      
     </div>
   );
 };

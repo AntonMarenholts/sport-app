@@ -1,6 +1,6 @@
 "use client";
 
-import { User } from "@/types/types";
+import { User } from "@/types";
 import { useEffect, useState } from "react";
 
 export default function UsersClientVersion() {

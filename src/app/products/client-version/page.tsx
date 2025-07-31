@@ -1,7 +1,7 @@
 "use client";
 
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import { useEffect, useState } from "react";
 
 export default function ProductsClient() {
